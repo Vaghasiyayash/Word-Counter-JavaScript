@@ -1,0 +1,47 @@
+<!-- Written By Vaghasiya Yash :) -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+		<style>
+			body {
+	background-color:yellow;
+}
+		</style>
+		<script>
+			/*function with argument*/
+function countWord(str){
+    //creating paragraph
+    var p = document.createElement("p");
+    //spliting apart the string and counting the words
+    var words = str.split(' ').length;//if you remove the space split(' ') here you can count chracters
+    //creating text line
+	var text = document.createTextNode("Your Context is "+words+" Words Long");
+	//adding the text to paragraph
+	p.appendChild(text);
+	//target the main div
+	var div = document.getElementById("main");
+  //adding the paragraph to the div
+  div.appendChild(p);
+}
+
+/* function without argument */
+/* 
+we access here textarea value inside the function and in first we access outside the fuction and use it when calling the function
+function countWord(){
+    var string =document.getElementById('wCount').value;
+		document.write(string.split(' ').length);
+		
+	}
+*/
+		</script>
+	</head>
+	<body>
+	    <div id="main">
+	    <label for="wCount" >Enter Here ParaGraph To Count Words</label><br />
+	    <textarea name="wCount" id="wCount" cols="30" rows="10"></textarea><br /><br />
+	    <input type="submit" onclick="countWord(document.getElementById('wCount').value);" >
+		</div>
+	</body>
+</html>
